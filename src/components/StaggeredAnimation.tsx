@@ -31,11 +31,12 @@ export default function StaggeredAnimation({
         visible: {
             opacity: 1,
             y: 0,
-            transition: {
-                duration: 0.6,
-                ease: [0.25, 0.25, 0.25, 0.75],
-            },
         },
+    };
+
+    const itemTransition = {
+        duration: 0.6,
+        ease: "easeOut" as const,
     };
 
     return (
@@ -48,11 +49,11 @@ export default function StaggeredAnimation({
         >
             {Array.isArray(children)
                 ? children.map((child, index) => (
-                    <motion.div key={index} variants={itemVariants}>
+                    <motion.div key={index} variants={itemVariants} transition={itemTransition}>
                         {child}
                     </motion.div>
                 ))
-                : <motion.div variants={itemVariants}>{children}</motion.div>
+                : <motion.div variants={itemVariants} transition={itemTransition}>{children}</motion.div>
             }
         </motion.div>
     );

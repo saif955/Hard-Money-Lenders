@@ -29,12 +29,13 @@ export default function ScrollAnimation({
             y: 0,
             x: 0,
             scale: 1,
-            transition: {
-                duration,
-                delay,
-                ease: [0.25, 0.25, 0.25, 0.75], // Custom easing
-            },
         },
+    };
+
+    const transition = {
+        duration,
+        delay,
+        ease: "easeOut" as const,
     };
 
     return (
@@ -43,6 +44,7 @@ export default function ScrollAnimation({
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={variants}
+            transition={transition}
             className={className}
         >
             {children}
