@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import ScrollAnimation from "@/components/ScrollAnimation";
 
 export default function Homepage() {
     return (
@@ -20,32 +21,38 @@ export default function Homepage() {
                     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh] sm:min-h-[80vh]">
                         {/* Left Content */}
                         <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-                            <div>
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-700 leading-tight">
-                                    FLORIDA AND TEXAS
-                                    <br />
-                                    HARD MONEY LENDERS
-                                </h2>
-                            </div>
+                            <ScrollAnimation direction="up" delay={0.2}>
+                                <div>
+                                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-green-700 leading-tight">
+                                        FLORIDA AND TEXAS
+                                        <br />
+                                        HARD MONEY LENDERS
+                                    </h2>
+                                </div>
+                            </ScrollAnimation>
 
-                            <div className="space-y-3 sm:space-y-4">
-                                <p className="text-lg sm:text-xl text-gray-800 font-medium">
-                                    Fast Closing Fix and Flip and Rental Loans
-                                </p>
-                                <p className="text-lg sm:text-xl text-gray-800 font-medium">
-                                    For Your Investment Properties.
-                                </p>
-                            </div>
+                            <ScrollAnimation direction="up" delay={0.4}>
+                                <div className="space-y-3 sm:space-y-4">
+                                    <p className="text-lg sm:text-xl text-gray-800 font-medium">
+                                        Fast Closing Fix and Flip and Rental Loans
+                                    </p>
+                                    <p className="text-lg sm:text-xl text-gray-800 font-medium">
+                                        For Your Investment Properties.
+                                    </p>
+                                </div>
+                            </ScrollAnimation>
 
-                            <div className="pt-4">
-                                <Button
-                                    size="lg"
-                                    className="bg-green-700 hover:bg-green-800 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-none w-full sm:w-auto"
-                                >
-                                    GET APPROVED ONLINE
-                                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                                </Button>
-                            </div>
+                            <ScrollAnimation direction="up" delay={0.6}>
+                                <div className="pt-4">
+                                    <Button
+                                        size="lg"
+                                        className="bg-green-700 hover:bg-green-800 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-none w-full sm:w-auto"
+                                    >
+                                        GET APPROVED ONLINE
+                                        <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                                    </Button>
+                                </div>
+                            </ScrollAnimation>
                         </div>
 
                         {/* Right side - space for geometric overlays */}
