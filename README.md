@@ -1,8 +1,11 @@
 # Ridge Street Capital - Real Estate Lending Platform
 
 A modern, responsive website for Ridge Street Capital, a real estate lending company specializing in fix & flip loans, rental property financing, and ground-up construction loans. Built with Next.js and featuring smooth animations, interactive components, and a professional design.
+
 ## Live link
+
 https://real-estate-loan.vercel.app/
+
 ## Features
 
 - **Responsive Design**: Mobile-first approach with seamless desktop experience
@@ -148,8 +151,156 @@ src/
 - Custom CSS animations are defined in `globals.css`
 - Navigation uses smooth scrolling to different page sections
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Deploy to Vercel
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is optimized for deployment on Vercel, the platform created by the makers of Next.js.
+
+#### Method 1: Deploy from GitHub (Recommended)
+
+1. **Push your code to GitHub** (if not already done):
+
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
+
+2. **Connect to Vercel**:
+
+   - Go to [vercel.com](https://vercel.com) and sign up/login
+   - Click "New Project"
+   - Import your GitHub repository
+   - Vercel will automatically detect it's a Next.js project
+
+3. **Configure deployment settings**:
+
+   - **Framework Preset**: Next.js (auto-detected)
+   - **Build Command**: `next build` (default)
+   - **Output Directory**: `.next` (default)
+   - **Install Command**: `npm install` (default)
+
+4. **Deploy**:
+   - Click "Deploy"
+   - Vercel will build and deploy your site
+   - You'll get a live URL like `https://your-project.vercel.app`
+
+#### Method 2: Deploy using Vercel CLI
+
+1. **Install Vercel CLI**:
+
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **Login to Vercel**:
+
+   ```bash
+   vercel login
+   ```
+
+3. **Deploy from your project directory**:
+
+   ```bash
+   vercel
+   ```
+
+   Follow the prompts:
+
+   - Set up and deploy? **Yes**
+   - Which scope? Select your account
+   - Link to existing project? **No** (for first deployment)
+   - Project name? **real-estate-loan** (or your preferred name)
+   - In which directory is your code located? **./`**
+   - Want to modify settings? **No** (Vercel auto-detects Next.js)
+
+4. **Production deployment**:
+   ```bash
+   vercel --prod
+   ```
+
+#### Method 3: One-Click Deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/saif955/Hard-Money-Lenders)
+
+### Deployment Configuration
+
+#### Environment Variables (if needed)
+
+If your project requires environment variables:
+
+1. **Local development** - Create `.env.local`:
+
+   ```env
+   NEXT_PUBLIC_API_URL=your_api_url
+   ```
+
+2. **Vercel dashboard** - Add in Project Settings > Environment Variables
+
+#### Custom Domain (Optional)
+
+1. Go to your Vercel project dashboard
+2. Navigate to Settings > Domains
+3. Add your custom domain
+4. Follow DNS configuration instructions
+
+#### Automatic Deployments
+
+Once connected to GitHub:
+
+- **Push to main branch** → Automatic production deployment
+- **Push to other branches** → Preview deployments
+- **Pull requests** → Preview deployments with unique URLs
+
+### Build Optimization
+
+The project is already optimized for production with:
+
+- ✅ Static page generation
+- ✅ Image optimization
+- ✅ Code splitting
+- ✅ CSS optimization
+- ✅ Bundle analysis
+
+### Deployment Checklist
+
+Before deploying, ensure:
+
+- [ ] All dependencies are in `package.json`
+- [ ] Build runs successfully: `npm run build`
+- [ ] No TypeScript errors
+- [ ] Environment variables configured (if needed)
+- [ ] Images are optimized and in correct directories
+- [ ] SEO metadata is complete
+
+### Troubleshooting Deployment
+
+**Build fails?**
+
+- Run `npm run build` locally to identify issues
+- Check for TypeScript errors
+- Ensure all imports are correct
+
+**Images not loading?**
+
+- Verify images are in `public/` directory
+- Check file paths in components
+- Ensure Next.js Image component has width/height
+
+**Slow loading?**
+
+- Images are automatically optimized by Next.js
+- Static pages are pre-rendered for fast loading
+- Vercel's global CDN ensures fast delivery worldwide
+
+### Post-Deployment
+
+After successful deployment:
+
+1. **Test your live site** thoroughly
+2. **Set up monitoring** (Vercel provides analytics)
+3. **Configure custom domain** if needed
+4. **Set up continuous deployment** from GitHub
+
+For more detailed information, visit the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) and [Vercel documentation](https://vercel.com/docs).
